@@ -1,7 +1,12 @@
+// App.jsx
+
 import React from "react";
 
+var isLoggedIn = false;
+
 function App() {
-  return (
+  if (!isLoggedIn)
+{  return (
     <div className="container">
       <h1>Hello</h1>
       <form className="form">
@@ -10,7 +15,10 @@ function App() {
         <button type="submit">Login</button>
       </form>
     </div>
-  );
+  );}
+  else 
+    return 
+      (<h1>Hello!</h1>)
 }
 
 export default App;
