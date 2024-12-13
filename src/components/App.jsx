@@ -2,22 +2,29 @@
 
 import React from "react";
 
-var isLoggedIn = false;
+var isLoggedIn = true;
+
+function renderConditionally(){
+  if (isLoggedIn){
+    return <h1>Hello</h1>
+  } else {
+    return (
+      <form className="form">
+      <input type="text" placeholder="Username" />
+      <input type="password" placeholder="Password" />
+      <button type="submit">Login</button>
+    </form>
+    );
+  }
+}
 
 function App() {
-  if (!isLoggedIn)
-{  return (
+return (
     <div className="container">
-      <h1>Hello</h1>
-      <form className="form">
-        <input type="text" placeholder="Username" />
-        <input type="password" placeholder="Password" />
-        <button type="submit">Login</button>
-      </form>
+      {renderConditionally()}
     </div>
   );
-    }
-    return <h1>Hello!</h1>
 }
 
 export default App;
+ 
